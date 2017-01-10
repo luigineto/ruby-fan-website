@@ -5,6 +5,17 @@ get('/') do
 	erb(:index)
 end
 
+get('/subscribe_form') do
+	erb(:subscribe_form)
+end
+
+get('/subscribe_confirmation') do
+	@user_name = params.fetch('user_name')
+	@user_surname = params.fetch('user_surname')
+	@user_email = params.fetch('user_email')
+	erb(:subscribe_confirmation)
+end
+
 get('/linocutboy') do
 	@art_title_01 = "Handbag"
 	@art_image_01 = "/img/linocutboy_01_handbag.jpeg"

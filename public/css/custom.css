@@ -24,3 +24,11 @@ footer {
 	margin-top: 25px;
 	text-align: center;
 }
+
+/* Form */
+
+.form-control {
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+}
