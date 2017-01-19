@@ -1,5 +1,7 @@
 require('sinatra')
 require('sinatra/reloader')
+require('./lib/title_case')
+also_reload('lib/**/*.rb')
 
 get('/') do
 	erb(:index)
@@ -10,8 +12,8 @@ get('/subscribe_form') do
 end
 
 get('/subscribe_confirmation') do
-	@user_name = params.fetch('user_name')
-	@user_surname = params.fetch('user_surname')
+	@user_name = params.fetch('user_name').title_case!()
+	@user_surname = params.fetch('user_surname').title_case!()
 	@user_email = params.fetch('user_email')
 	erb(:subscribe_confirmation)
 end
